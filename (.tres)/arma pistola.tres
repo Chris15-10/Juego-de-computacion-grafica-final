@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://dl8yb3qh1pwlx"]
+
+[ext_resource type="Texture2D" uid="uid://81ymce2yeal6" path="res://recursos/armas/Arma pistola.png" id="1_8vfua"]
+[ext_resource type="Script" uid="uid://c281hb0ddhbeo" path="res://scripts/ArmaConfig.cs" id="1_q4kmx"]
+[ext_resource type="PackedScene" uid="uid://bla24gbrt2rxx" path="res://escenas/bala.tscn" id="2_cttt8"]
+[ext_resource type="Texture2D" uid="uid://ctlrjo1ri6ykt" path="res://recursos/armas/Arma pistola mini.png" id="3_0jm75"]
+[ext_resource type="Texture2D" uid="uid://c1y6oi3jjf21b" path="res://recursos/armas/arma2 bala.png" id="4_0jm75"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cttt8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8vfua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8vfua")
+}],
+"loop": true,
+"name": &"disparo",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_q4kmx")
+velocidad = 700
+Animaciones = SubResource("SpriteFrames_cttt8")
+Dano = 10
+BalaScene = ExtResource("2_cttt8")
+CadenciaDisparo = 0.5
+bala = ExtResource("4_0jm75")
+shake = 0.5
+Icono = ExtResource("3_0jm75")
+GrupoItem = "default"

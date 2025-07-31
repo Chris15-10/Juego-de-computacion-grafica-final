@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://byxt3bjgjoq4y"]
+
+[ext_resource type="Texture2D" uid="uid://dwuqah6k3l8d2" path="res://recursos/mapas/Spaceship Tileset/characters/!$Consoles_diagonal.png" id="1_60xsq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koxe4"]
+atlas = ExtResource("1_60xsq")
+region = Rect2(0, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxrls"]
+atlas = ExtResource("1_60xsq")
+region = Rect2(144, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36h52"]
+atlas = ExtResource("1_60xsq")
+region = Rect2(288, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3pot"]
+atlas = ExtResource("1_60xsq")
+region = Rect2(144, 288, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh5f5"]
+atlas = ExtResource("1_60xsq")
+region = Rect2(288, 288, 144, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b48cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koxe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxrls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36h52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3pot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh5f5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7bag3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_b48cd")
+frame_progress = 0.00170838
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("ConvexPolygonShape2D_7bag3")

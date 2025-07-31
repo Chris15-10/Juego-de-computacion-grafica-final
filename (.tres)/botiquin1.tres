@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://8kwse0x48d3s"]
+
+[ext_resource type="Texture2D" uid="uid://birr6nmpv8s3w" path="res://recursos/cofres/botiquin1.png" id="1_fefne"]
+[ext_resource type="Script" uid="uid://bhuf0b4q1jju0" path="res://scripts/botiquinConfig.cs" id="2_g6uvk"]
+
+[resource]
+script = ExtResource("2_g6uvk")
+vidaquecura = 50
+Icono = ExtResource("1_fefne")
+GrupoItem = "botiquin"

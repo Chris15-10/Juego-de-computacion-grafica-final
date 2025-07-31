@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://bearfq6tvjh13"]
+
+[ext_resource type="Texture2D" uid="uid://cn1yftfwtnn2v" path="res://recursos/armas/arma 6.png" id="1_akvpr"]
+[ext_resource type="PackedScene" uid="uid://bla24gbrt2rxx" path="res://escenas/bala.tscn" id="2_gahoo"]
+[ext_resource type="Texture2D" uid="uid://dt8i3w52gbkng" path="res://recursos/armas/arma 6 mini.png" id="3_4g2uq"]
+[ext_resource type="Texture2D" uid="uid://mjwfb1ab57xo" path="res://recursos/armas/arma4 bala.png" id="4_yuneo"]
+[ext_resource type="Script" uid="uid://c281hb0ddhbeo" path="res://scripts/ArmaConfig.cs" id="5_wrcif"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a4nx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akvpr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akvpr")
+}],
+"loop": true,
+"name": &"disparo",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("5_wrcif")
+velocidad = 1000
+Animaciones = SubResource("SpriteFrames_1a4nx")
+Dano = 25
+BalaScene = ExtResource("2_gahoo")
+CadenciaDisparo = 0.5
+bala = ExtResource("4_yuneo")
+shake = 0.7
+Icono = ExtResource("3_4g2uq")
+GrupoItem = "default"

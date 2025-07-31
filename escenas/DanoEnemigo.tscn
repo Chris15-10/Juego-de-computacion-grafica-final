@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://biroe8rv2yuor"]
+
+[ext_resource type="Script" uid="uid://d4ccuv5o1pedv" path="res://scripts/DanoEnemigo.cs" id="1_vlaam"]
+[ext_resource type="FontFile" uid="uid://clmcoph8wrwmd" path="res://recursos/fuentes/Pixels.ttf" id="2_0143a"]
+
+[node name="DanoEnemigo" type="Node2D"]
+script = ExtResource("1_vlaam")
+
+[node name="Texto" type="Label" parent="."]
+modulate = Color(0.0941176, 0.764706, 0.698039, 1)
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("2_0143a")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+autostart = true

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://psql3hs5dxe7"]
+
+[ext_resource type="Texture2D" uid="uid://cvskqvo2kv5ae" path="res://recursos/armas/arma5.png" id="1_wgrsu"]
+[ext_resource type="PackedScene" uid="uid://bla24gbrt2rxx" path="res://escenas/bala.tscn" id="2_xoqoo"]
+[ext_resource type="Texture2D" uid="uid://dh4whsr3sf6fm" path="res://recursos/armas/arma5 mini.png" id="3_0j6vp"]
+[ext_resource type="Texture2D" uid="uid://bulad25n0p6pv" path="res://recursos/armas/arma5 bala.png" id="4_qk74a"]
+[ext_resource type="Script" uid="uid://c281hb0ddhbeo" path="res://scripts/ArmaConfig.cs" id="5_c55pb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7a0m4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wgrsu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wgrsu")
+}],
+"loop": true,
+"name": &"disparo",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("5_c55pb")
+velocidad = 1700
+Animaciones = SubResource("SpriteFrames_7a0m4")
+Dano = 50
+BalaScene = ExtResource("2_xoqoo")
+CadenciaDisparo = 0.7
+Icono = ExtResource("3_0j6vp")
+bala = ExtResource("4_qk74a")
+shake = 0.8

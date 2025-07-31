@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl13byyllkifa"]
+
+[ext_resource type="Script" uid="uid://b1r2ohmvcmhb5" path="res://scripts/Item.cs" id="1_67bck"]
+[ext_resource type="Texture2D" uid="uid://ctlrjo1ri6ykt" path="res://recursos/armas/Arma pistola mini.png" id="2_hdjqb"]
+[ext_resource type="FontFile" uid="uid://clmcoph8wrwmd" path="res://recursos/fuentes/Pixels.ttf" id="4_ka6nb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvvap"]
+size = Vector2(16, 7)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5y43"]
+font = ExtResource("4_ka6nb")
+font_size = 17
+font_color = Color(0.996078, 0.945098, 0.894118, 1)
+outline_size = 1
+outline_color = Color(0.0152538, 0.00657157, 0.000601734, 1)
+
+[node name="Item" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_67bck")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -9)
+texture = ExtResource("2_hdjqb")
+offset = Vector2(0, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wvvap")
+
+[node name="Mensaje" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -27.0
+offset_right = 147.0
+offset_bottom = -4.0
+text = "presiona 'x' para recoger"
+label_settings = SubResource("LabelSettings_g5y43")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ksl7yhmmf5o"]
+
+[ext_resource type="Script" uid="uid://cbn5c0sy48wng" path="res://scripts/Areapuertas.cs" id="1_h1p18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfc2k"]
+size = Vector2(182, 151)
+
+[node name="Areamapa" type="Area2D" node_paths=PackedStringArray("_pared_abajo") groups=["controlador_puertas"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_h1p18")
+_pared_abajo = []
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(94, 76)
+shape = SubResource("RectangleShape2D_hfc2k")

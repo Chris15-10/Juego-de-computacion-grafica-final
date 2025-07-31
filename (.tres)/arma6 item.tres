@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://8nkh4ckm4aum"]
+
+[ext_resource type="Resource" uid="uid://bearfq6tvjh13" path="res://(.tres)/arma 6.tres" id="1_qjj1l"]
+[ext_resource type="PackedScene" uid="uid://cl13byyllkifa" path="res://escenas/Item.tscn" id="2_27fmp"]
+[ext_resource type="Script" uid="uid://dj3ddkcjx47r4" path="res://scripts/ObjetoLootable.cs" id="3_cn4d6"]
+
+[resource]
+script = ExtResource("3_cn4d6")
+Escena = ExtResource("2_27fmp")
+ArmaConfig = ExtResource("1_qjj1l")

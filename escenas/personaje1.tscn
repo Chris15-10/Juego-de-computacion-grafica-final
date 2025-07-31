@@ -1,0 +1,357 @@
+[gd_scene load_steps=32 format=3 uid="uid://d11vhsfxap15e"]
+
+[ext_resource type="Script" uid="uid://cpa8kubqs7rc1" path="res://scripts/Personaje1.cs" id="1_82mvp"]
+[ext_resource type="Resource" uid="uid://cwyjjrf063r8b" path="res://(.tres)/kyro.tres" id="2_1t8ll"]
+[ext_resource type="Script" uid="uid://bi8q4myu6m5vt" path="res://scripts/CamaraJugador.cs" id="3_1t8ll"]
+[ext_resource type="Texture2D" uid="uid://euckaqafhllh" path="res://recursos/personaje 1/spritesheet.png" id="3_rx5vl"]
+[ext_resource type="Script" uid="uid://b61cpsfthe45w" path="res://scripts/Vida.cs" id="4_0c04v"]
+[ext_resource type="Texture2D" uid="uid://ds5ejd0gftq3k" path="res://recursos/personaje 1/frame-1.png" id="4_1t8ll"]
+[ext_resource type="Texture2D" uid="uid://d3ah67ly3yxvv" path="res://recursos/personaje 1/frame-2.png" id="5_mnao5"]
+[ext_resource type="Texture2D" uid="uid://ceq01dgn0tbig" path="res://recursos/personaje 1/frame-3.png" id="6_hynon"]
+[ext_resource type="Texture2D" uid="uid://dh782i7q13lhq" path="res://recursos/personaje 1/frame-4.png" id="7_gon05"]
+[ext_resource type="Texture2D" uid="uid://71pxl1cvaonh" path="res://recursos/personaje 1/frame-5.png" id="8_s4w2n"]
+[ext_resource type="Texture2D" uid="uid://8fgch2dgyin5" path="res://recursos/personaje 1/frame-6.png" id="9_7j4pp"]
+[ext_resource type="Texture2D" uid="uid://dk7cu2royqqfu" path="res://recursos/personaje 1/frame-7.png" id="10_5i13x"]
+[ext_resource type="Texture2D" uid="uid://b67l5s63k4ktk" path="res://recursos/personaje 1/frame-8.png" id="11_65ksc"]
+[ext_resource type="PackedScene" uid="uid://c8at1ynm5h7s7" path="res://escenas/armas.tscn" id="11_td8ws"]
+[ext_resource type="Resource" uid="uid://bouue7n71t1hu" path="res://(.tres)/arma3.tres" id="14_mnao5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irbon"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p3su"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvhcg"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yboxe"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(720, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s415g"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(960, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x6hk"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(1200, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11n1k"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(1440, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nulrv"]
+atlas = ExtResource("3_rx5vl")
+region = Rect2(1680, 0, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fusw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irbon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p3su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvhcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yboxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s415g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x6hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11n1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nulrv")
+}],
+"loop": true,
+"name": &"caminando",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1t8ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mnao5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hynon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gon05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s4w2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7j4pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5i13x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_65ksc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t8ll"]
+size = Vector2(31, 34)
+
+[sub_resource type="Animation" id="Animation_xlm3s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arma:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 29)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arma:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_0c04v"]
+resource_name = "cambio arma"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.150696, 0.200928, 0.250442, 0.401855, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 1.0472, 0.785398, 0.0, -0.349066, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arma")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Aplicar"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arma:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.401855, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 29), Vector2(-5, 29), Vector2(5, 29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Arma:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_sjuhw"]
+resource_name = "cambio arma_2"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.150696, 0.200928, 0.250442, 0.401855, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 1.0472, 0.785398, 0.0, 0.349066, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arma")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Aplicar"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arma:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-13, 29), Vector2(-13, 29), Vector2(-5, 29), Vector2(-13, 29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Arma:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.6, 0.6), Vector2(-0.6, 0.6), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_1t8ll"]
+resource_name = "disparo"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0961582, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 29), Vector2(2.5, 29), Vector2(5, 29)]
+}
+
+[sub_resource type="Animation" id="Animation_mnao5"]
+resource_name = "disparo_i"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0961582, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-13, 29), Vector2(-10, 29), Vector2(-13, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Arma:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.199045, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.6, 0.6), Vector2(-0.6, 0.6), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sjuhw"]
+_data = {
+&"RESET": SubResource("Animation_xlm3s"),
+&"cambio arma": SubResource("Animation_0c04v"),
+&"cambio arma_2": SubResource("Animation_sjuhw"),
+&"disparo": SubResource("Animation_1t8ll"),
+&"disparo_i": SubResource("Animation_mnao5")
+}
+
+[node name="personaje 1" type="CharacterBody2D" node_paths=PackedStringArray("_arma") groups=["jugador"]]
+position = Vector2(5, -16)
+collision_layer = 4
+script = ExtResource("1_82mvp")
+Config = ExtResource("2_1t8ll")
+_arma = NodePath("Arma")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, 15)
+zoom = Vector2(1.6, 1.6)
+limit_left = -1000000000
+limit_top = -1000000000
+limit_right = 1000000000
+limit_bottom = 1000000000
+script = ExtResource("3_1t8ll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.5, 12)
+scale = Vector2(0.195833, 0.2)
+sprite_frames = SubResource("SpriteFrames_fusw0")
+animation = &"caminando"
+frame = 7
+frame_progress = 0.555042
+
+[node name="Arma" parent="." instance=ExtResource("11_td8ws")]
+position = Vector2(5, 29)
+Config = ExtResource("14_mnao5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 19)
+shape = SubResource("RectangleShape2D_1t8ll")
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("4_0c04v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sjuhw")
+}
+speed_scale = 1.5
+
+[node name="Centro" type="Marker2D" parent="."]
+position = Vector2(-3, 15)

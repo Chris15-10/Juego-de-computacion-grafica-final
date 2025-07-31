@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2tmeqky61ryy"]
+
+[ext_resource type="Texture2D" uid="uid://dwuqah6k3l8d2" path="res://recursos/mapas/Spaceship Tileset/characters/!$Consoles_diagonal.png" id="1_q7oow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5xs2"]
+atlas = ExtResource("1_q7oow")
+region = Rect2(144, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pusf"]
+atlas = ExtResource("1_q7oow")
+region = Rect2(288, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqtud"]
+atlas = ExtResource("1_q7oow")
+region = Rect2(144, 288, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcct0"]
+atlas = ExtResource("1_q7oow")
+region = Rect2(288, 288, 144, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jggbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5xs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pusf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqtud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcct0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7oow"]
+radius = 18.0278
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_jggbu")
+autoplay = "default"
+frame_progress = 0.995529
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-10, 1)
+shape = SubResource("CircleShape2D_q7oow")

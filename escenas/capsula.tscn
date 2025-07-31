@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8clkund7dg1n"]
+
+[ext_resource type="Texture2D" uid="uid://chve6uvw0sjng" path="res://recursos/mapas/Spaceship Tileset/characters/!$Spaceship_Medbay.png" id="1_u75up"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5kxb"]
+atlas = ExtResource("1_u75up")
+region = Rect2(0, 0, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nfqb"]
+atlas = ExtResource("1_u75up")
+region = Rect2(288, 0, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g32y6"]
+atlas = ExtResource("1_u75up")
+region = Rect2(0, 192, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2new"]
+atlas = ExtResource("1_u75up")
+region = Rect2(288, 192, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr0ka"]
+atlas = ExtResource("1_u75up")
+region = Rect2(0, 384, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuqcf"]
+atlas = ExtResource("1_u75up")
+region = Rect2(288, 384, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky3rg"]
+atlas = ExtResource("1_u75up")
+region = Rect2(0, 576, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcbt3"]
+atlas = ExtResource("1_u75up")
+region = Rect2(288, 576, 144, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4173"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5kxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nfqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g32y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2new")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr0ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuqcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky3rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcbt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u75up"]
+size = Vector2(69, 95)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o4173")
+autoplay = "default"
+frame_progress = 0.535254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -12.5)
+shape = SubResource("RectangleShape2D_u75up")

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://bouue7n71t1hu"]
+
+[ext_resource type="Texture2D" uid="uid://btmdc3k0m0w6f" path="res://recursos/armas/Arma 3.png" id="1_ptlor"]
+[ext_resource type="PackedScene" uid="uid://bla24gbrt2rxx" path="res://escenas/bala.tscn" id="2_ptlor"]
+[ext_resource type="Script" uid="uid://c281hb0ddhbeo" path="res://scripts/ArmaConfig.cs" id="2_uynyc"]
+[ext_resource type="Texture2D" uid="uid://b12imac4ipgk5" path="res://recursos/armas/Arma 3 mini.png" id="3_kiico"]
+[ext_resource type="Texture2D" uid="uid://8mvesf412vus" path="res://recursos/armas/arma3 bala.png" id="4_kiico"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptlor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ptlor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ptlor")
+}],
+"loop": true,
+"name": &"disparo",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_uynyc")
+velocidad = 1500
+Animaciones = SubResource("SpriteFrames_ptlor")
+Dano = 30
+BalaScene = ExtResource("2_ptlor")
+CadenciaDisparo = 0.5
+bala = ExtResource("4_kiico")
+shake = 1.0
+Icono = ExtResource("3_kiico")
+GrupoItem = "default"

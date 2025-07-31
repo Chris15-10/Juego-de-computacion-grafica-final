@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dims0q2pxxu81"]
+
+[ext_resource type="Texture2D" uid="uid://c27642su5d004" path="res://Captura de pantalla 2025-05-30 a la(s) 3.25.46 a. m..png" id="1_ynrbh"]
+[ext_resource type="PackedScene" uid="uid://c2rwr7sy48uc0" path="res://escenas/cofre.tscn" id="2_wisiu"]
+[ext_resource type="PackedScene" uid="uid://d11vhsfxap15e" path="res://escenas/personaje1.tscn" id="3_12rfu"]
+[ext_resource type="PackedScene" uid="uid://cl13byyllkifa" path="res://escenas/Item.tscn" id="4_c1ndg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CapturaDePantalla2025-05-30ALa(s)3_25_46A_ m_" type="Sprite2D" parent="."]
+position = Vector2(625, 1351)
+texture = ExtResource("1_ynrbh")
+offset = Vector2(0, -1000)
+
+[node name="sort" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="cofre" parent="sort" instance=ExtResource("2_wisiu")]
+y_sort_enabled = true
+position = Vector2(538, 99)
+
+[node name="Node2D3" parent="sort" instance=ExtResource("4_c1ndg")]
+y_sort_enabled = true
+position = Vector2(433, 179)
+scale = Vector2(1.2, 1.2)
+
+[node name="Node2D" parent="sort" instance=ExtResource("3_12rfu")]
+y_sort_enabled = true
+position = Vector2(793, 110)
+
+[node name="Cofre" parent="sort" instance=ExtResource("2_wisiu")]
+position = Vector2(358, 99)

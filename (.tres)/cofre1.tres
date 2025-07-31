@@ -1,0 +1,56 @@
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://y7vn1gp46kso"]
+
+[ext_resource type="Texture2D" uid="uid://kv2dsds7omq8" path="res://recursos/mapas/Spaceship Tileset/characters/!Spaceship_chest.png" id="1_817qd"]
+[ext_resource type="Script" uid="uid://g80x74v66k24" path="res://scripts/CofreConfig.cs" id="2_7sroo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8vfv"]
+atlas = ExtResource("1_817qd")
+region = Rect2(288, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgdjb"]
+atlas = ExtResource("1_817qd")
+region = Rect2(288, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dmjf"]
+atlas = ExtResource("1_817qd")
+region = Rect2(288, 288, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el3wn"]
+atlas = ExtResource("1_817qd")
+region = Rect2(288, 432, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8w6w"]
+atlas = ExtResource("1_817qd")
+region = Rect2(288, 0, 48, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivo81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8vfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgdjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dmjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el3wn")
+}],
+"loop": true,
+"name": &"abierto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8w6w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_7sroo")
+Animaciones = SubResource("SpriteFrames_ivo81")

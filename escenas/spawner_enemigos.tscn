@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://0n0jnv3gt2es"]
+
+[ext_resource type="Script" uid="uid://byd7lppnmk8br" path="res://scripts/SpawnerEnemigos.cs" id="1_r5uxh"]
+[ext_resource type="PackedScene" uid="uid://ve0w7igoxdhq" path="res://escenas/enemigo_cuerpo.tscn" id="2_8dxkr"]
+[ext_resource type="PackedScene" uid="uid://bfwhbl3bppcf7" path="res://escenas/enemigo_shooter.tscn" id="3_pj8vi"]
+[ext_resource type="Resource" uid="uid://dkclusbj6g4eg" path="res://(.tres)/enemigo2.tres" id="4_pj8vi"]
+[ext_resource type="Resource" uid="uid://dgbxnom2h22xs" path="res://(.tres)/enemigo1.tres" id="5_iga48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tpsd"]
+size = Vector2(185, 145)
+
+[node name="SpawnerEnemigos" type="Area2D" groups=["spawner"]]
+position = Vector2(-4, -2)
+collision_layer = 2048
+collision_mask = 5
+script = ExtResource("1_r5uxh")
+enemigos = Array[PackedScene]([ExtResource("2_8dxkr"), ExtResource("3_pj8vi")])
+maximo = 8
+recursos = Array[Resource]([ExtResource("4_pj8vi"), ExtResource("5_iga48")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_3tpsd")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
