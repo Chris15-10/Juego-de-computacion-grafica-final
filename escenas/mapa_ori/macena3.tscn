@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bamooe6a5akwy"]
+
+[ext_resource type="Texture2D" uid="uid://gimmr17ykrt6" path="res://recursos/mapas/Spaceship Tileset/tilesets/Spacestation_Inside_D.png" id="1_q20fi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrxpo"]
+size = Vector2(13, 11)
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SpacestationInsideD" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1, -3)
+texture = ExtResource("1_q20fi")
+offset = Vector2(0, -8)
+hframes = 16
+vframes = 12
+frame = 125
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_jrxpo")

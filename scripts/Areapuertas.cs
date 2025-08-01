@@ -18,6 +18,7 @@ public partial class Areapuertas : Area2D
 	{
 		_colision = GetNode<CollisionShape2D>("CollisionShape2D");
 		BodyEntered += OnBodyEntered;
+		
 	}
 
 	private void OnBodyEntered(Node body)
@@ -35,11 +36,13 @@ public partial class Areapuertas : Area2D
 		{
 			puerta_arriba.cerrar();
 		}
+		var hud = GetTree().Root.GetNodeOrNull<HUD>("Main/HUD");
+		hud?.MostrarMensaje("¡Sobrevive!");
 	}
 
 	public void RegistrarMuerte()
 	{
-		if (!activado || puertasAbiertas) return; // <- evita errores
+		if (!activado || puertasAbiertas) return; 
 
 		enemigosMuertos++;
 		GD.Print($"Enemigos muertos: {enemigosMuertos}");
@@ -58,6 +61,8 @@ public partial class Areapuertas : Area2D
 			{
 				puerta_arriba.Abrir();
 			}
+			var hud = GetTree().Root.GetNodeOrNull<HUD>("Main/HUD");
+			hud?.MostrarMensaje("¡Zona Despejada!");
 			_colision?.SetDeferred("monitoring", false);
 
 			var spawner = GetTree().GetFirstNodeInGroup("spawner") as SpawnerEnemigos;

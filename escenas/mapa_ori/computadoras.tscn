@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnuhgt3ms0yoh"]
+
+[ext_resource type="Texture2D" uid="uid://hi3sfacnsnmb" path="res://recursos/mapas/Spaceship Tileset/characters/!$Consoles_main3.png" id="1_1jhay"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbjcq"]
+atlas = ExtResource("1_1jhay")
+region = Rect2(0, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbkum"]
+atlas = ExtResource("1_1jhay")
+region = Rect2(144, 192, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afbpy"]
+atlas = ExtResource("1_1jhay")
+region = Rect2(0, 96, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2hhd"]
+atlas = ExtResource("1_1jhay")
+region = Rect2(144, 96, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp2vi"]
+atlas = ExtResource("1_1jhay")
+region = Rect2(0, 0, 144, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fgq1"]
+atlas = ExtResource("1_1jhay")
+region = Rect2(144, 0, 144, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5ot6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbjcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbkum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afbpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2hhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp2vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fgq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3ybt"]
+size = Vector2(70, 42)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_f5ot6")
+autoplay = "default"
+frame_progress = 0.977577
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 11)
+shape = SubResource("RectangleShape2D_h3ybt")
+disabled = true

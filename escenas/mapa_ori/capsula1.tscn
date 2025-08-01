@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce8n2f30bcmft"]
+
+[ext_resource type="Texture2D" uid="uid://chve6uvw0sjng" path="res://recursos/mapas/Spaceship Tileset/characters/!$Spaceship_Medbay.png" id="1_m8tfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl2xd"]
+atlas = ExtResource("1_m8tfv")
+region = Rect2(0, 0, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kws13"]
+atlas = ExtResource("1_m8tfv")
+region = Rect2(0, 192, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ofvs"]
+atlas = ExtResource("1_m8tfv")
+region = Rect2(0, 384, 144, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hfdq"]
+atlas = ExtResource("1_m8tfv")
+region = Rect2(0, 576, 144, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jmkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl2xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kws13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ofvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hfdq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnt2l"]
+size = Vector2(21, 91)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arydv"]
+radius = 30.0
+height = 84.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_4jmkt")
+autoplay = "default"
+frame_progress = 0.0673131
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -5.5)
+shape = SubResource("RectangleShape2D_dnt2l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_arydv")

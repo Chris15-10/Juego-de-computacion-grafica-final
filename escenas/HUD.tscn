@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv1q4vgldabdr"]
+
+[ext_resource type="Script" uid="uid://crl0iiw63n0ma" path="res://escenas/HUD.cs" id="1_up6ai"]
+[ext_resource type="FontFile" uid="uid://clmcoph8wrwmd" path="res://recursos/fuentes/Pixels.ttf" id="2_e3vx7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_up6ai"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_up6ai"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrvm2"]
+line_spacing = 4.0
+paragraph_spacing = 2.0
+font = ExtResource("2_e3vx7")
+font_size = 17
+outline_size = 1
+outline_color = Color(0.0240787, 0.0842813, 0.0230993, 1)
+shadow_size = 52
+shadow_color = Color(0.77354, 0.500488, 0.162406, 0)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_up6ai")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("CanvasItemMaterial_up6ai")
+use_parent_material = true
+offset_right = 40.0
+offset_bottom = 23.0
+focus_previous = NodePath(".")
+theme_override_colors/font_color = Color(0.92721, 0.806869, 0.673849, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("2_e3vx7")
+theme_override_font_sizes/font_size = 59
+theme_override_styles/normal = SubResource("StyleBoxEmpty_up6ai")
+text = "prueba"
+label_settings = SubResource("LabelSettings_hrvm2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

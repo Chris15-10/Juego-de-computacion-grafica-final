@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://h4cy54gnc1u0"]
+
+[ext_resource type="Texture2D" uid="uid://gimmr17ykrt6" path="res://recursos/mapas/Spaceship Tileset/tilesets/Spacestation_Inside_D.png" id="1_dptxd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofynp"]
+atlas = ExtResource("1_dptxd")
+region = Rect2(144, 327, 24, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob4ak"]
+atlas = ExtResource("1_dptxd")
+region = Rect2(192, 327, 24, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pvva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofynp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob4ak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2v1p"]
+size = Vector2(4, 66)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_5pvva")
+autoplay = "default"
+frame_progress = 0.813828
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, 7)
+shape = SubResource("RectangleShape2D_c2v1p")

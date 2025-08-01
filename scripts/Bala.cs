@@ -14,7 +14,7 @@ public partial class Bala : Area2D
         BodyEntered += OnBodyEntered;
     }
 
-    public void Init(Vector2 direccion, int velocidad, int dano, Texture2D textura, string grupo)
+    public void Init(Vector2 direccion, int velocidad, int dano, Texture2D textura, Vector2 _scale, string grupo)
     {
         _grupo = grupo;
 
@@ -49,6 +49,8 @@ public partial class Bala : Area2D
 
         if (_sprite != null && textura != null)
             _sprite.Texture = textura;
+        
+        Scale = _scale;
     }
 
     public override void _PhysicsProcess(double delta)

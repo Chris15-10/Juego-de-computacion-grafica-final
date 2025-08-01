@@ -106,6 +106,11 @@ public partial class SpawnerEnemigos : Area2D
             enemigo.cargar(recurso);
             cont_enemigos++;
             enemigo.miarea = mi_area; 
+            var colision = enemigo.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
+            if (colision != null)
+            {
+                colision.Disabled = true;
+            }
             enemigo.Connect(Enemigo.SignalName.Muerto, Callable.From(() =>
             {
                 enemigo.miarea?.RegistrarMuerte();
@@ -118,6 +123,7 @@ public partial class SpawnerEnemigos : Area2D
                     if (name == "instancia")
                     {
                         enemigo.Activar();
+                        colision.Disabled = false;
                     }
                 };
             }

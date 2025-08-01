@@ -723,6 +723,7 @@ autostart = true
 [node name="Arma" parent="." instance=ExtResource("5_jnn0d")]
 visible = false
 position = Vector2(2, 5)
+_scale = Vector2(1.5, 1.5)
 
 [node name="RayJugador" type="RayCast2D" parent="."]
 position = Vector2(0, 4)

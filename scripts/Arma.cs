@@ -9,7 +9,8 @@ public partial class Arma : Node2D
     private AnimatedSprite2D _sprite;
     private Marker2D _canon;
     public Texture2D _bala;
-    public int balavel=0;
+    [Export] public Vector2 _scale= new Vector2(0,0);
+    public int balavel = 0;
 
     public override void _Ready()
     {
@@ -45,8 +46,9 @@ public partial class Arma : Node2D
         {
             balavel = Config.velocidad;
         }
-           
-        balaInst.Call("Init", direction, balavel, Config.Dano, _bala, objetivoGrupo);
+
+
+        balaInst.Call("Init", direction, balavel, Config.Dano, _bala, _scale, objetivoGrupo);
         balaInst.Rotation = direction.Angle();
 
         _sprite?.Play("disparo");

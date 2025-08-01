@@ -339,6 +339,7 @@ frame_progress = 0.555042
 [node name="Arma" parent="." instance=ExtResource("11_td8ws")]
 position = Vector2(5, 29)
 Config = ExtResource("14_mnao5")
+_scale = Vector2(2, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 19)

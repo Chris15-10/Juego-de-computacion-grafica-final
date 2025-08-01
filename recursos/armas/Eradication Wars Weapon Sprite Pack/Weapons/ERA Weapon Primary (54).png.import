@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://5v6b42q2yebi"
+path="res://.godot/imported/ERA Weapon Primary (54).png-e04f3d076c9fa04ad2f06b1d6d104a06.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://recursos/armas/Eradication Wars Weapon Sprite Pack/Weapons/ERA Weapon Primary (54).png"
+dest_files=["res://.godot/imported/ERA Weapon Primary (54).png-e04f3d076c9fa04ad2f06b1d6d104a06.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

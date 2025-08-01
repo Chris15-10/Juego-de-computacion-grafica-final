@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://c8g61xuodt2f2"]
+
+[ext_resource type="Texture2D" uid="uid://b6nlaskukku5" path="res://recursos/armas/Eradication Wars Weapon Sprite Pack/Weapons/ERA Weapon Primary (63).png" id="1_iubng"]
+[ext_resource type="PackedScene" uid="uid://bla24gbrt2rxx" path="res://escenas/bala.tscn" id="2_sgwsk"]
+[ext_resource type="Texture2D" uid="uid://cet5xcn5uy2jm" path="res://recursos/armas/Eradication Wars Weapon Sprite Pack/Tiny Bonus/tiny weapons/micro weapon (38).png" id="3_8158t"]
+[ext_resource type="Texture2D" uid="uid://mfxxy7cy0k47" path="res://recursos/armas/Eradication Wars Weapon Sprite Pack/Tiny Bonus/tiny projectiles/micro projectile (13).png" id="4_dw786"]
+[ext_resource type="Script" uid="uid://c281hb0ddhbeo" path="res://scripts/ArmaConfig.cs" id="5_0lmok"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykgn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iubng")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("5_0lmok")
+velocidad = 700
+Animaciones = SubResource("SpriteFrames_ykgn4")
+Dano = 50
+BalaScene = ExtResource("2_sgwsk")
+CadenciaDisparo = 0.1
+bala = ExtResource("4_dw786")
+shake = 0.5
+Icono = ExtResource("3_8158t")
+GrupoItem = "default"

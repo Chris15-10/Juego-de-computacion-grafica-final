@@ -21,7 +21,7 @@ script = ExtResource("1_3faau")
 Config = ExtResource("2_jwrv4")
 
 [node name="Cañón" type="Marker2D" parent="."]
-position = Vector2(25, -1.66667)
+position = Vector2(28.3333, -3.33334)
 scale = Vector2(0.6, 0.6)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

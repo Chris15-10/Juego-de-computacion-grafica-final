@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://7javfwtrg2xq"]
+
+[ext_resource type="Texture2D" uid="uid://cosg8a8budelp" path="res://recursos/mapas/Spacestation_Inside_E.png" id="1_rc3qm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5fw7"]
+size = Vector2(33, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SpacestationInsideE" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+texture = ExtResource("1_rc3qm")
+offset = Vector2(0, -42)
+hframes = 16
+vframes = 5
+frame = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_r5fw7")

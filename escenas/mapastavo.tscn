@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bsco1denlxf73"]
+[gd_scene load_steps=58 format=4 uid="uid://bsco1denlxf73"]
 
 [ext_resource type="Texture2D" uid="uid://b8hmejp051la2" path="res://recursos/mapas/Spacestation_Inside_A2.png" id="1_wrcac"]
 [ext_resource type="Texture2D" uid="uid://cg5xcupkp3oqq" path="res://recursos/mapas/Spacestation_Inside_A1.png" id="2_5lahv"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" path="res://resplandor_estructura.tscn" id="22_cawjb"]
 [ext_resource type="PackedScene" uid="uid://bpqlayyokg8cn" path="res://escenas/ParedAbajo.tscn" id="24_dyqqv"]
 [ext_resource type="PackedScene" uid="uid://c8ksl7yhmmf5o" path="res://escenas/areamapa.tscn" id="24_e1tu2"]
+[ext_resource type="PackedScene" uid="uid://dv1q4vgldabdr" path="res://escenas/hud.tscn" id="27_qau4e"]
+[ext_resource type="PackedScene" uid="uid://ct0uotevwxge3" path="res://escenas/BarraVida.tscn" id="28_gouss"]
 [ext_resource type="Texture2D" uid="uid://dt52x63muj4tk" path="res://recursos/enemigos/Captura de pantalla 2025-07-28 015217.png" id="29_c0uhu"]
 [ext_resource type="PackedScene" uid="uid://fdk5dbs1m1at" path="res://escenas/pared_arriba.tscn" id="30_sy4e5"]
 
@@ -29817,7 +29819,10 @@ sources/0 = SubResource("TileSetAtlasSource_wlf0a")
 sources/1 = SubResource("TileSetAtlasSource_ln4xl")
 sources/2 = SubResource("TileSetAtlasSource_tcqyv")
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qau4e"]
+size = Vector2(200, 154)
+
+[node name="Main" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
 position = Vector2(-39, 0)
@@ -29894,13 +29899,6 @@ position = Vector2(341.25, -731)
 scale = Vector2(1.83962, 1)
 texture = ExtResource("29_c0uhu")
 
-[node name="SpawnerEnemigos" parent="." node_paths=PackedStringArray("mi_area") instance=ExtResource("21_arkp2")]
-position = Vector2(1635, -434)
-scale = Vector2(3.6, 2)
-mi_area = NodePath("../Habitaciones/Areamapa_[1]")
-maximo = 6
-tiempo = 2.5
-
 [node name="SpawnerEnemigos2" parent="." node_paths=PackedStringArray("mi_area") instance=ExtResource("21_arkp2")]
 position = Vector2(599, -923)
 scale = Vector2(4.79, 1.8)
@@ -29948,7 +29946,7 @@ texture = ExtResource("29_c0uhu")
 [node name="habitaciones enemigos" type="Node2D" parent="."]
 
 [node name="Areamapa" parent="habitaciones enemigos" node_paths=PackedStringArray("_pared_abajo") instance=ExtResource("24_e1tu2")]
-position = Vector2(1437.49, 183.343)
+position = Vector2(1437.49, 187.343)
 scale = Vector2(2.95, 2.26471)
 _pared_abajo = [NodePath("ParedAbajo")]
 enemigosObjetivo = 3
@@ -30092,7 +30090,7 @@ scale = Vector2(2.99132, 2.38064)
 
 [node name="SpawnerEnemigos7" parent="." node_paths=PackedStringArray("mi_area") instance=ExtResource("21_arkp2")]
 position = Vector2(592, 998)
-scale = Vector2(3.31842, 2.54283)
+scale = Vector2(4.20034, 2.21536)
 mi_area = NodePath("../habitaciones enemigos/Areamapa5")
 tiempo = 2.0
 
@@ -30122,7 +30120,7 @@ position = Vector2(315.27, -140.989)
 scale = Vector2(0.407892, 0.829268)
 
 [node name="Areamapa_[1]" parent="Habitaciones" node_paths=PackedStringArray("_pared_abajo") instance=ExtResource("24_e1tu2")]
-position = Vector2(-344.73, -125.989)
+position = Vector2(-349.73, -128.989)
 scale = Vector2(3.7145, 2.07492)
 _pared_abajo = [NodePath("ParedAbajo")]
 enemigosObjetivo = 6
@@ -30146,8 +30144,8 @@ position = Vector2(75.1064, 155.5)
 scale = Vector2(0.319, 0.3)
 
 [node name="Node2D" parent="Habitaciones" instance=ExtResource("3_5lahv")]
-position = Vector2(-1044.73, 2169.01)
-scale = Vector2(1.2, 1.2)
+position = Vector2(-788.73, -2.98901)
+scale = Vector2(1.1, 1.1)
 
 [node name="Areamapa3" parent="Habitaciones" node_paths=PackedStringArray("_pared_abajo", "puerta_arriba") instance=ExtResource("24_e1tu2")]
 position = Vector2(-1400.73, 634.011)
@@ -30219,3 +30217,28 @@ scale = Vector2(2.6, 0.8)
 position = Vector2(-1433.73, 885.011)
 rotation = 4.71239
 scale = Vector2(2.3, 0.8)
+
+[node name="HUD" parent="." instance=ExtResource("27_qau4e")]
+layer = 8
+offset = Vector2(450, 50)
+scale = Vector2(8, 8)
+transform = Transform2D(8, 0, 0, 8, 450, 50)
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = -1
+position = Vector2(0, -5)
+collision_layer = 65535
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(599, 1006)
+shape = SubResource("RectangleShape2D_qau4e")
+
+[node name="SpawnerEnemigos" parent="." node_paths=PackedStringArray("mi_area") instance=ExtResource("21_arkp2")]
+position = Vector2(1647, -427)
+scale = Vector2(3.55557, 2)
+mi_area = NodePath("../Habitaciones/Areamapa_[1]")
+maximo = 6
+tiempo = 2.5
+
+[node name="BarraVida" parent="." instance=ExtResource("28_gouss")]
